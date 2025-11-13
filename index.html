@@ -776,28 +776,122 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            nav {
+                padding: 1rem 0;
+            }
+
+            nav .container {
+                padding: 0 1rem;
+                flex-wrap: wrap;
+            }
+
+            nav .logo {
+                font-size: 1.4rem;
+            }
+
             nav ul {
-                gap: 1.2rem;
+                gap: 0.8rem;
+                font-size: 0.8rem;
             }
 
             nav a {
-                font-size: 0.85rem;
+                font-size: 0.75rem;
+            }
+
+            .hero {
+                padding: 8rem 1.5rem 4rem;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin: 2rem auto 0;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 1rem;
             }
 
             section {
-                padding: 5rem 1.5rem;
+                padding: 4rem 1.5rem;
+            }
+
+            #skills {
+                padding: 4rem 1.5rem;
+            }
+
+            #contact {
+                padding: 4rem 1.5rem;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             h2 {
-                font-size: 2.2rem;
+                font-size: 2rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .skill-card {
+                padding: 1.5rem;
             }
 
             .floating-shape {
                 display: none;
+            }
+
+            .social-links a {
+                width: 55px;
+                height: 55px;
+                font-size: 1.4rem;
+            }
+
+            .project-image {
+                height: 200px;
+            }
+
+            .project-card:hover .project-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                font-size: 0.7rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
