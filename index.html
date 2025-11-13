@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yaseen Zuberi - Full-Stack Developer</title>
+    <title>Yaseen Zuberi - Full-Stack Developer & Music Producer</title>
     <style>
         * {
             margin: 0;
@@ -21,6 +21,7 @@
             --charcoal: #2b2d42;
             --warm-gray: #8d99ae;
             --electric-teal: #20c997;
+            --vinyl-purple: #7b2cbf;
         }
 
         body {
@@ -208,9 +209,9 @@
             animation: slideInLeft 1s ease;
         }
 
-        .hero h1 strong {
+        .hero h1 .gradient-text {
             font-weight: 700;
-            background: linear-gradient(135deg, var(--golden-gate), var(--sunset-orange));
+            background: linear-gradient(135deg, var(--golden-gate), var(--sunset-orange), var(--vinyl-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -342,13 +343,62 @@
             to { width: 80px; }
         }
 
-        /* Skills Section */
-        #skills {
+        /* About Section */
+        #about {
             background: white;
             margin: 0;
             max-width: 100%;
             padding: 7rem 2rem;
             box-shadow: 0 10px 60px rgba(0,0,0,0.08);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+        }
+
+        .about-card {
+            background: linear-gradient(135deg, var(--fog-white) 0%, white 100%);
+            padding: 3rem;
+            border-left: 5px solid var(--golden-gate);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+        }
+
+        .about-card:nth-child(2) {
+            border-left-color: var(--vinyl-purple);
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(192, 80, 77, 0.2);
+        }
+
+        .about-card h3 {
+            font-size: 2rem;
+            color: var(--bay-blue);
+            margin-bottom: 1.5rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .about-card p {
+            color: var(--warm-gray);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .about-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        /* Skills Section */
+        #skills {
             position: relative;
             overflow: hidden;
         }
@@ -380,7 +430,7 @@
         }
 
         .skill-card {
-            background: linear-gradient(135deg, var(--fog-white) 0%, white 100%);
+            background: white;
             padding: 2.5rem;
             border-left: 4px solid var(--golden-gate);
             transition: all 0.4s;
@@ -468,6 +518,142 @@
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 4px 15px rgba(44, 95, 124, 0.3);
+        }
+
+        /* Music Section */
+        #music {
+            background: linear-gradient(135deg, var(--vinyl-purple), #5a189a);
+            color: white;
+            margin: 0;
+            max-width: 100%;
+            padding: 7rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #music::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        #music h2 {
+            color: white;
+        }
+
+        #music h2::after {
+            background: linear-gradient(90deg, var(--sunset-orange), var(--electric-teal));
+        }
+
+        .music-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .music-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .music-artist-name {
+            font-size: 2.5rem;
+            font-family: 'Georgia', serif;
+            font-weight: 700;
+            margin: 2rem 0;
+            background: linear-gradient(135deg, var(--sunset-orange), var(--electric-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .music-genres {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .genre-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 0.7rem 1.5rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .genre-tag:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+
+        .soundcloud-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            text-align: center;
+            border: 3px solid rgba(255,255,255,0.2);
+            transition: all 0.4s;
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+
+        .soundcloud-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-10px);
+            border-color: #ff5500;
+            box-shadow: 0 15px 40px rgba(255, 85, 0, 0.4);
+        }
+
+        .soundcloud-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .soundcloud-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .soundcloud-card p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        .soundcloud-link {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #ff5500;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            text-transform: lowercase;
+        }
+
+        .soundcloud-link:hover {
+            background: #ff6a1a;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 85, 0, 0.5);
         }
 
         /* Projects Section */
@@ -725,7 +911,7 @@
         .decorative-line {
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, var(--golden-gate), var(--sunset-orange), var(--painted-ladies), var(--electric-teal));
+            background: linear-gradient(90deg, var(--golden-gate), var(--sunset-orange), var(--vinyl-purple), var(--electric-teal));
             animation: gradientShift 5s ease infinite;
             background-size: 200% 100%;
         }
@@ -790,12 +976,12 @@
             }
 
             nav ul {
-                gap: 0.8rem;
+                gap: 0.6rem;
                 font-size: 0.8rem;
             }
 
             nav a {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
             }
 
             .hero {
@@ -832,265 +1018,5 @@
                 padding: 4rem 1.5rem;
             }
 
-            #skills {
+            #about {
                 padding: 4rem 1.5rem;
-            }
-
-            #contact {
-                padding: 4rem 1.5rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .skill-card {
-                padding: 1.5rem;
-            }
-
-            .floating-shape {
-                display: none;
-            }
-
-            .social-links a {
-                width: 55px;
-                height: 55px;
-                font-size: 1.4rem;
-            }
-
-            .project-image {
-                height: 200px;
-            }
-
-            .project-card:hover .project-image {
-                height: 200px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav ul {
-                gap: 0.5rem;
-            }
-
-            nav a {
-                font-size: 0.7rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Animated Background -->
-    <div class="bg-animation">
-        <div class="floating-shape shape1"></div>
-        <div class="floating-shape shape2"></div>
-        <div class="floating-shape shape3"></div>
-    </div>
-
-    <div class="decorative-line"></div>
-
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="container">
-            <div class="logo">yaseen zuberi</div>
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#skills">skills</a></li>
-                <li><a href="#projects">work</a></li>
-                <li><a href="#contact">connect</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>creative <strong>developer</strong></h1>
-            <p class="subtitle">building beautiful digital experiences in the bay</p>
-            <p class="tagline">
-                Computer Science student at San Francisco State University with a passion for creating user-focused applications,
-                using skillsets to turn ideas into working mobile and web experiences. 
-              
-            </p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">view my work</a>
-                <a href="#contact" class="btn btn-secondary">let's chat</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2>what i do</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Frontend Craft</h3>
-                <p>Building responsive, accessible interfaces that feel intuitive and look stunning across all devices.</p>
-                <div class="skill-tags">
-                    <span class="tag">HTML5</span>
-                    <span class="tag">CSS3</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Flutter</span>
-                    <span class="tag">Figma</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>Code, Logic, and Security</h3>
-                <p>Strong foundation in computer science principles and multiple programming paradigms.</p>
-                <div class="skill-tags">
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Java</span>
-                    <span class="tag">C++</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">BCrypt</span>
-                </div>
-            </div>
-            <div class="skill-card">
-                <h3>Modern Workflow</h3>
-                <p>Leveraging contemporary tools and practices for efficient, collaborative development.</p>
-                <div class="skill-tags">
-                    <span class="tag">Git</span>
-                    <span class="tag">GitHub</span>
-                    <span class="tag">VS Code</span>
-                    <span class="tag">Node.js</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>recent work</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image library">📚</div>
-                <div class="project-content">
-                    <h3>Library()</h3>
-                    <p>Modern online bookstore mockup developed collaboratively. Features intuitive navigation, dynamic book displays, and a clean interface that reimagines the book shopping experience.</p>
-                    <div class="skill-tags">
-                        <span class="tag">Javascript</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">HTML5</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">BCrypt</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Figma</span>
-                        <span class="tag">Teamwork</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/yaseensl/group-project-csc31701">source code</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image pathfinder">🎮</div>
-                <div class="project-content">
-                    <h3>Pathfinder</h3>
-                    <p>Interactive maze explorer game with algorithmic pathfinding. Players navigate challenging puzzles while the game demonstrates search algorithms in action.</p>
-                    <div class="skill-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">HTML5</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Algorithms</span>
-                        <span class="tag">Game Dev</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/CSC317-F25/assignment-3-yaseensl">source code</a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-image internship">💼</div>
-                <div class="project-content">
-                    <h3>Order Helper</h3>
-                    <p>Co-developed production application during my internship at Santa Clara University. Collaborated with senior developers to implement features, optimize performance, and deliver code in a professional environment.</p>
-                    <div class="skill-tags">
-                        <span class="tag">Flutter</span>
-                        <span class="tag">Figma</span>
-                        <span class="tag">Android Studio</span>
-                        <span class="tag">Teamwork</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#">under NDA</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="contact-content">
-            <h2>let's build something</h2>
-            <p>Currently seeking frontend and software development opportunities. Always excited to collaborate on creative projects.</p>
-            <div class="cta-buttons">
-                <a href="mailto:yaseenzuberi@gmail.com" class="btn btn-primary">send a message</a>
-                <a href="ZuberiYaseen_SFSU.pdf" class="btn btn-secondary" download>resume</a>
-            </div>
-            <div class="social-links">
-                <a href="" title="GitHub">
-                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="https://linkedin.com/in/yaseenzuberi17" title="LinkedIn">
-                    <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>crafted with care in the san francisco bay area © 2025 yaseen zuberi</p>
-    </footer>
-
-    <div class="decorative-line"></div>
-
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
